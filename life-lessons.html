@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Life Lessons in This College Journey</title>
+    <link rel="stylesheet" href="blog-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .extra-content {
+            display: none;
+        }
+        .toggle-button {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // Toggle Additional Content
+        function toggleContent() {
+            const extraContent = document.querySelector('.extra-content');
+            const toggleButton = document.querySelector('.toggle-button');
+            if (extraContent.style.display === "none") {
+                extraContent.style.display = "block";
+                toggleButton.textContent = "Read Less";
+            } else {
+                extraContent.style.display = "none";
+                toggleButton.textContent = "Read More";
+            }
+        }
+    </script>
+</head>
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Main Articles 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
+          <a href="sinag-tams.html">Sinag Tams Activities</a>
+          <a href="pre-christmas.html">Pre-Christmas Activities</a>
+          <a href="group-experience.html">Group Experience</a>
+          <a href="life-lessons.html">Life Lessons in This College Journey</a> 
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Popular Posts 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="study-habits.html">Study Habits</a>
+          <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
+          <a href="first-college-experience.html">First Week College Experience</a>
+          <a href="college-challenges.html">Challenges in College Journey</a>
+          <a href="web-creators.html">Getting to Know Behind the Web Creators</a> 
+        </div>
+    </div>  
+    <a href="#contact">Contact Us</a>
+    <a href="#about">About Us</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+    <h1>Life Lessons in This College Journey</h1>
+    <p>By Cherry Joy Toribio</p>
+    <br>
+    <p>This is the full content of the blog post. You can add more paragraphs, images, and other HTML elements as needed.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    <div class="extra-content">
+        <p>Further insights on the life lessons learned in this college journey. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <p class="toggle-button" onclick="toggleContent()">Read More</p>
+</body>
+</html>

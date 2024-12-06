@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="about-us.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function myFunction() {
+            const x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        window.onload = function () {
+            const aboutSection = document.querySelector(".about-section p");
+            const currentHour = new Date().getHours();
+            let greeting = "Hello!";
+            if (currentHour < 12) {
+                greeting = "Good Morning!";
+            } else if (currentHour < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+            aboutSection.textContent = `${greeting} Welcome to our About Us page. We’re excited to share our story with you.`;
+        };
+
+        function contactMember(name) {
+            alert(`You clicked on Contact for ${name}. We will connect you soon!`);
+        }
+    </script>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#contact">Contact Us</a>
+    <a href="#about">About Us</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<div class="header">
+    <h2>Our FEU Roosevelt Fresgkfktfvggfgfghmen Journey hahahahahtrdtrtertertertah</h2>
+</div>
+
+<div class="about-section">
+    <h1>About Us</h1>
+    <p>Loading...</p>
+</div>
+
+<h2 class="team-header">Our Team</h2>
+<div class="team-container">
+    <div class="card">
+        <img src="team1.jpg" alt="Cherry Joy Toribio">
+        <div class="card-content">
+            <h2>Cherry Joy Toribio</h2>
+            <p class="title">CEO & Founder</p>
+            <p>Some text about Jane.</p>
+            <button class="button" onclick="contactMember('Jane Doe')">Contact</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="team2.jpg" alt="Raven Nolasco">
+        <div class="card-content">
+            <h2>Raven Nolasco</h2>
+            <p class="title">Art Director</p>
+            <p>Some text about Mike.</p>
+            <button class="button" onclick="contactMember('Mike Ross')">Contact</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="team3.jpg" alt="Dwayne Fajardo">
+        <div class="card-content">
+            <h2>Dwayne Fajardo</h2>
+            <p class="title">Designer</p>
+            <p>Some text about John.</p>
+            <button class="button" onclick="contactMember('John Doe')">Contact</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="team4.jpg" alt="Daniel Isaac Melo">
+        <div class="card-content">
+            <h2>Daniel Isaac Melo</h2>
+            <p class="title">Developer</p>
+            <p>Some text about Anna.</p>
+            <button class="button" onclick="contactMember('Anna Smith')">Contact</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

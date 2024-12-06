@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FEU Roosevelt Halloween Cos-Play and Lobby Decoration</title>
+    <link rel="stylesheet" href="blog-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .extra-content {
+            display: none;
+        }
+        .toggle-button {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // Function to toggle navbar for small screens
+        function myFunction() {
+            const x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        // Dynamic Greeting Based on Time of Day
+        window.onload = function() {
+            const greetingElement = document.createElement('h2');
+            const currentHour = new Date().getHours();
+            let greeting = "Welcome!";
+            if (currentHour < 12) {
+                greeting = "Good Morning!";
+            } else if (currentHour < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+            greetingElement.textContent = greeting;
+            greetingElement.style.textAlign = "center";
+            document.body.insertBefore(greetingElement, document.body.firstChild);
+        };
+
+        // Toggle Additional Content
+        function toggleContent() {
+            const extraContent = document.querySelector('.extra-content');
+            const toggleButton = document.querySelector('.toggle-button');
+            if (extraContent.style.display === "none") {
+                extraContent.style.display = "block";
+                toggleButton.textContent = "Read Less";
+            } else {
+                extraContent.style.display = "none";
+                toggleButton.textContent = "Read More";
+            }
+        }
+    </script>
+
+<style>
+    /* Image Gallery Section */
+    .image-gallery {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .image-gallery h2 {
+        margin-bottom: 20px;
+        color: #04AA6D;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        justify-content: center;
+    }
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+</style> 
+
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Main Articles 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
+              <a href="sinag-tams.html">Sinag Tams Activities</a>
+              <a href="pre-christmas.html">Pre-Christmas Activities</a>
+              <a href="group-experience.html">Group Experience</a>
+              <a href="life-lessons.html">Life Lessons in This College Journey</a> 
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Popular Posts 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="study-habits.html">Study Habits</a>
+              <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
+              <a href="first-college-experience.html">First Week College Experience</a>
+              <a href="college-challenges.html">Challenges in College Journey</a>
+              <a href="web-creators.html">Getting to Know Behind the Web Creators</a> 
+            </div>
+        </div>  
+        <a href="#contact">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+      
+    <h1>FEU Roosevelt Halloween Cos-Play and Lobby Decoration</h1>
+    <p>Event Date: October 29, 2024</p>
+    <br>
+    <p>A fantastic Halloween event was held at FEU Roosevelt Marikina on October 29, 2024, an event made to celebrate Halloween and to let the students unleash their creativity with their creative Cosplays. Spooky decorations and eye-catching costumes were everywhere throughout the campus. Students from Kindergarten to TED students, and other teachers and professors participated and were dressed up as their preferred costumes aligned with the season.</p>
+
+    <div class="extra-content">
+        <p>Lots of thrilling designs and decorations over the hallways caught the attention of the students, it is definitely made with lots of effort! The attention to details in these lobby decorations are all well thought out and captured the essence of the Halloween season. A Halloween Cosplay competition was also held for students to participate to showcase their talents in the event by dressing up as their preferred characters from different genres may it be a cartoon character or a video game character.</p>
+    </div>
+    <p class="toggle-button" onclick="toggleContent()">Read More</p>
+
+    <section class="image-gallery">
+        <h2>Highlights from the Event</h2>
+        <div class="gallery">
+            <img src="Images/Halloween CosPlay/halloween1.jpg" alt="OurGroup">
+            <img src="Images/Halloween CosPlay/halloween2.jpg" alt="GroupPhoto">
+            <img src="Images/Halloween CosPlay/halloween3.jpg" alt="MeloAndRaven">
+            <img src="Images/Halloween CosPlay/halloween4.jpg" alt="Decoration1">
+            <img src="Images/Halloween CosPlay/halloween5.jpg" alt="Decoration2">
+        </div>
+    </section>
+
+</body>
+</html>

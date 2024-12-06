@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+  // Function to toggle navigation menu for small screens
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
+  // Form validation function
+  function validateForm(event) {
+    const name = document.forms["newsletterForm"]["name"].value.trim();
+    const email = document.forms["newsletterForm"]["mail"].value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (name === "") {
+      alert("Name must be filled out.");
+      event.preventDefault();
+      return false;
+    }
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      event.preventDefault();
+      return false;
+    }
+    alert("Thank you for subscribing!");
+    return true;
+  }
+
+  // Dynamic welcome message based on the time of day
+  window.onload = function() {
+    const header = document.querySelector(".header h2");
+    const currentHour = new Date().getHours();
+    if (currentHour < 12) {
+      header.textContent = "Good Morning! Welcome to Our FEU Roosevelt Freshmen Journey";
+    } else if (currentHour < 18) {
+      header.textContent = "Good Afternoon! Welcome to Our FEU Roosevelt Freshmen Journey";
+    } else {
+      header.textContent = "Good Evening! Welcome to Our FEU Roosevelt Freshmen Journey";
+    }
+  };
+</script>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Main Articles 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
+      <a href="sinag-tams.html">Sinag Tams Activities</a>
+      <a href="pre-christmas.html">Pre-Christmas Activities</a>
+      <a href="group-experience.html">Group Experience</a>
+      <a href="life-lessons.html">Life Lessons in This College Journey</a> 
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Popular Posts 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="study-habits.html">Study Habits</a>
+      <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
+      <a href="first-college-experience.html">First Week College Experience</a>
+      <a href="college-challenges.html">Challenges in College Journey</a>
+      <a href="web-creators.html">Getting to Know Behind the Web Creators</a> 
+    </div>
+  </div>  
+  <a href="#contact">Contact Us</a>
+  <a href="#about">About Us</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div class="header">
+  <h2>Our FEU Roosevelt Freshmen Journey</h2>
+</div>
+
+<h1>Contact Us</h1>
+<form name="newsletterForm" onsubmit="return validateForm(event)" action="/action_page.php">
+  <div class="container">
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
+  </div>
+
+  <div class="container" style="background-color:white">
+    <input type="text" placeholder="Name" name="name" required>
+    <input type="text" placeholder="Email address" name="mail" required>
+    <label>
+      <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
+    </label>
+  </div>
+
+  <div class="container">
+    <input type="submit" value="Subscribe">
+  </div>
+</form>
+
+<div class="footer">
+  <h2>Footer</h2>
+  <p> @2024 Web Page Creation</p>
+</div>
+
+</body>
+</html>
