@@ -73,12 +73,75 @@ body {
   flex: 1;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  margin: 10px;
+/* Container for the cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 1200px;
 }
 
+/* Individual card styling */
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Card title */
+.card h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Event date */
+.card h5 {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Image styling */
+.card .fakeimg img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Card description */
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Read more button */
+.read-more-button {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #04AA6D;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #04AA6D;
+}
+
+/*footer*/
 .footer {
   text-align: center;
   background: #ddd;
