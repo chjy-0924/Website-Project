@@ -1,34 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <title>Challenges in College Journey</title>
+    <link rel="stylesheet" href="blog-style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Challenges in College Journey</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        h1, h2 {
-            text-align: center;
-        }
-
-        p {
-            text-align: justify;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
         .extra-content {
             display: none;
         }
-
         .toggle-button {
             color: #007BFF;
             cursor: pointer;
@@ -36,9 +17,9 @@
         }
     </style>
     <script>
-        // Function to toggle navigation menu for small screens
+        // Function to toggle navbar for small screens
         function myFunction() {
-            var x = document.getElementById("myTopnav");
+            const x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
                 x.className += " responsive";
             } else {
@@ -63,7 +44,7 @@
             document.body.insertBefore(greetingElement, document.body.firstChild);
         };
 
-        // Toggle Additional Content in Blog Post
+        // Toggle Additional Content
         function toggleContent() {
             const extraContent = document.querySelector('.extra-content');
             const toggleButton = document.querySelector('.toggle-button');
@@ -76,56 +57,103 @@
             }
         }
     </script>
+
+<style>
+    /* Image Gallery Section */
+    .image-gallery {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .image-gallery h2 {
+        margin-bottom: 20px;
+        color: #04AA6D;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        justify-content: center;
+    }
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+</style> 
+
 </head>
 <body>
-
-<div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Home</a>
-    <div class="dropdown">
-        <button class="dropbtn">Main Articles 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
-          <a href="sinag-tams.html">Sinag Tams Activities</a>
-          <a href="pre-christmas.html">Pre-Christmas Activities</a>
-          <a href="group-experience.html">Group Experience</a>
-          <a href="life-lessons.html">Life Lessons in This College Journey</a> 
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Main Articles 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
+              <a href="sinag-tams.html">Sinag Tams Activities</a>
+              <a href="pre-christmas.html">Pre-Christmas Activities</a>
+              <a href="group-experience.html">Group Experience</a>
+              <a href="life-lessons.html">Life Lessons in This College Journey</a> 
+            </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Popular Posts 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="study-habits.html">Study Habits</a>
-          <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
-          <a href="first-college-experience.html">First Week College Experience</a>
-          <a href="college-challenges.html">Challenges in College Journey</a>
-          <a href="web-creators.html">Getting to Know Behind the Web Creators</a> 
+        <div class="dropdown">
+            <button class="dropbtn">Popular Posts 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="study-habits.html">Study Habits</a>
+              <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
+              <a href="first-college-experience.html">First Week College Experience</a>
+              <a href="college-challenges.html">Challenges in College Journey</a>
+              <a href="web-creators.html">Getting to Know Behind the Web Creators</a> 
+            </div>
+        </div>  
+        <a href="#contact">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+      
+    <h1>Challenges We are Facing in our College Journey</h1>
+    <p>By: Toribio, Nolasco, Fajardo, and Melo</p>
+
+    <section class="image-gallery">
+        <h2>Visual Archive</h2>
+        <div class="gallery">
+            <img src="Images/ChallengesNCollege/CherryCnC.jpg" alt="OurGroup">
+            <img src="Images/ChallengesNCollege/RavenCnC.jpg" alt="GroupPhoto">
+            <img src="Images/ChallengesNCollege/DwayneCnC.jpg" alt="MeloAndRaven">
+            <img src="Images/ChallengesNCollege/MeloCnC.jpg" alt="Decoration1">
         </div>
-      </div>  
-    <a href="#contact">Contact Us</a>
-    <a href="#about">About Us</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-</div>
+    </section>
 
-<h1>Challenges in College Journey</h1>
-<p>By Cherry Joy Toribio</p>
-<br>
-<p>This is the full content of the blog post. You can add more paragraphs, images, and other HTML elements as needed.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <br>
+    <p>These are the challenges our group faced during our college journey:</p>
 
-<!-- Extra Content Section -->
-<div class="extra-content">
-    <p>Additional content here. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.</p>
-    <p>Etiam porttitor lacus eu mi bibendum, nec accumsan nibh tristique. Donec sollicitudin molestie malesuada. Proin eget tortor risus.</p>
-</div>
+    <div class="extra-content">
+        <p>By: Cherry Joy Toribio <br>
+            College is definitely a completely new environment for me. Taking a programming course felt like being lost in a maze with no map. My dream was to pursue a Bachelor of Education degree, but due to personal and private issues, I ended up in this program, which is technically aligned with my senior high school strand. However, programming is entirely new to me, as we only covered Contact Center Services (CCS) in senior high school. Everything was overwhelming—from codes to programs, it felt like standing at the edge of an uncharted ocean, unsure of which way to wade in. I had a hard time adjusting, and I think that has been the most challenging part of college for me so far.</p>
+        <p>By: Raven Nolasco <br>
+            I can definitely say that College is very different from High school, the environment, the people, almost everything is different. The challenge I am facing right now as a college student is fitting in the environment and maintaining a good academic performance. I can say that I am not confident when it comes to my academic performance but I’m trying as much as I can to maintain good grades and not drop my subjects. When it comes to fitting in, sometimes I felt like I didn’t belong or I feel very odd and not in place. Most probably because of the new environment and people I’m hanging out with which I’m still not used to it.</p>
+        <p>By: Dwayne Fajardo <br>
+            Navigating my college journey has presented several challenges. Balancing the demands of academics, extracurricular activities, and personal responsibilities has proven to be quite draining. Additionally, adapting to a new environment and diverse teaching methods has been a significant adjustment. Managing time effectively while staying motivated amidst high expectations remains a continuous struggle. Despite these hardships, I am determined to persevere and grow through these experiences.</p>
+        <p>By: Daniel Isaac Melo <br>
+            My challenges in college is having an event in school while we have pendings tasks in other subjects I mean it’s really easy to handle it but with additional task in that event is hard for me and challenging because knowing you have still have pendings in school tasks you have a event in school that you should attend and kinda challenging for me because in one event there is a additional task during that day and I need some time management to finish the given tasks in school. My number 2 challenges is getting up early knowing that don’t have enough sleep because of cramming in assignments during that night I know that I should do the task earlier when I have a time but there are too many pending task to do so I have to cram in the night that’s all my challenges in college journey.</p>
 
-<!-- Read More/Less Button -->
-<p class="toggle-button" onclick="toggleContent()">Read More</p>
+    </div>
+    <p class="toggle-button" onclick="toggleContent()">Read More</p>
 
 </body>
 </html>
