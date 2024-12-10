@@ -1,66 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Challenges in College Journey</title>
-    <link rel="stylesheet" href="blog-style.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Challenges in College Journey</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
         .extra-content {
             display: none;
         }
+
         .toggle-button {
             color: #007BFF;
             cursor: pointer;
             text-decoration: underline;
         }
-    </style>
-    <script>
-        // Function to toggle navbar for small screens
-        function myFunction() {
-            const x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
 
-        // Dynamic Greeting Based on Time of Day
-        window.onload = function() {
-            const greetingElement = document.createElement('h2');
-            const currentHour = new Date().getHours();
-            let greeting = "Welcome!";
-            if (currentHour < 12) {
-                greeting = "Good Morning!";
-            } else if (currentHour < 18) {
-                greeting = "Good Afternoon!";
-            } else {
-                greeting = "Good Evening!";
-            }
-            greetingElement.textContent = greeting;
-            greetingElement.style.textAlign = "center";
-            document.body.insertBefore(greetingElement, document.body.firstChild);
-        };
+        /* Style for the navigation bar */
+        .navbar {
+  overflow: hidden;
+  background-color: #333;
+}
 
-        // Toggle Additional Content
-        function toggleContent() {
-            const extraContent = document.querySelector('.extra-content');
-            const toggleButton = document.querySelector('.toggle-button');
-            if (extraContent.style.display === "none") {
-                extraContent.style.display = "block";
-                toggleButton.textContent = "Read Less";
-            } else {
-                extraContent.style.display = "none";
-                toggleButton.textContent = "Read More";
-            }
-        }
-    </script>
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-<style>
-    /* Image Gallery Section */
-    .image-gallery {
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: green;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none; /* Hidden by default */
+  float: right;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.hamburger:hover {
+  background-color: green; /* Matches hover color of navbar */
+}
+
+/* Show hamburger icon on smaller screens */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block; /* Visible on small screens */
+  }
+}
+
+/* Hide navbar items on small screens */
+@media screen and (max-width: 768px) {
+  .navbar a, .navbar .dropdown {
+    display: none; /* Hide all links and dropdowns */
+  }
+  .navbar.active a, .navbar.active .dropdown {
+    display: block; /* Show links and dropdowns when active */
+    float: none;
+    text-align: left;
+    padding: 10px;
+  }
+}
+
+/* Image Gallery Section */
+.image-gallery {
         padding: 20px;
         max-width: 1200px;
         margin: 20px auto;
@@ -89,71 +162,114 @@
     .gallery img:hover {
         transform: scale(1.05);
     }
-</style> 
+
+    </style>
+
+<script>
+  // Toggle the navigation menu for smaller screens
+  function myFunction() {
+      var nav = document.getElementById("myTopnav");
+      if (nav.className === "topnav") {
+          nav.className += " responsive";
+      } else {
+          nav.className = "topnav";
+      }
+  }
+
+  window.onload = function() {
+      const greetingElement = document.createElement('h2');
+      const currentHour = new Date().getHours();
+      let greeting = "Welcome!";
+      if (currentHour < 12) {
+          greeting = "Good Morning!";
+      } else if (currentHour < 18) {
+          greeting = "Good Afternoon!";
+      } else {
+          greeting = "Good Evening!";
+      }
+      greetingElement.textContent = greeting;
+      greetingElement.style.textAlign = "center";
+      document.body.insertBefore(greetingElement, document.body.firstChild);
+  };
+
+// Toggle Additional Content
+function toggleContent() {
+            const extraContent = document.querySelector('.extra-content');
+            const toggleButton = document.querySelector('.toggle-button');
+            if (extraContent.style.display === "none") {
+                extraContent.style.display = "block";
+                toggleButton.textContent = "Read Less";
+            } else {
+                extraContent.style.display = "none";
+                toggleButton.textContent = "Read More";
+            }
+        }
+
+</script>
 
 </head>
 <body>
-    <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn">Main Articles 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
-              <a href="sinag-tams.html">Sinag Tams Activities</a>
-              <a href="pre-christmas.html">Pre-Christmas Activities</a>
-              <a href="group-experience.html">Group Experience</a>
-              <a href="life-lessons.html">Life Lessons in This College Journey</a> 
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Popular Posts 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="study-habits.html">Study Habits</a>
-              <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
-              <a href="first-college-experience.html">First Week College Experience</a>
-              <a href="college-challenges.html">Challenges in College Journey</a>
-              <a href="web-creators.html">Getting to Know Behind the Web Creators</a> 
-            </div>
-        </div>  
-        <a href="#contact">Contact Us</a>
-        <a href="#about">About Us</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
+
+    <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Main Articles 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
+        <a href="sinag-tams.html">Sinag Tams Activities</a>
+        <a href="pre-christmas.html">Pre-Christmas Activities</a>
+        <a href="group-experience.html">Group Experience</a>
+        <a href="life-lessons.html">Life Lessons in this College Journey</a>
+      </div>
     </div>
-      
-    <h1>Challenges We are Facing in our College Journey</h1>
-    <p>By: Toribio, Nolasco, Fajardo, and Melo</p>
-
-    <section class="image-gallery">
-        <h2>Visual Archive</h2>
-        <div class="gallery">
-            <img src="Images/ChallengesNCollege/CherryCnC.jpg" alt="OurGroup">
-            <img src="Images/ChallengesNCollege/RavenCnC.jpg" alt="GroupPhoto">
-            <img src="Images/ChallengesNCollege/DwayneCnC.jpg" alt="MeloAndRaven">
-            <img src="Images/ChallengesNCollege/MeloCnC.jpg" alt="Decoration1">
-        </div>
-    </section>
-
-    <br>
-    <p>These are the challenges our group faced during our college journey:</p>
-
-    <div class="extra-content">
-        <p>By: Cherry Joy Toribio <br>
-            College is definitely a completely new environment for me. Taking a programming course felt like being lost in a maze with no map. My dream was to pursue a Bachelor of Education degree, but due to personal and private issues, I ended up in this program, which is technically aligned with my senior high school strand. However, programming is entirely new to me, as we only covered Contact Center Services (CCS) in senior high school. Everything was overwhelming—from codes to programs, it felt like standing at the edge of an uncharted ocean, unsure of which way to wade in. I had a hard time adjusting, and I think that has been the most challenging part of college for me so far.</p>
-        <p>By: Raven Nolasco <br>
-            I can definitely say that College is very different from High school, the environment, the people, almost everything is different. The challenge I am facing right now as a college student is fitting in the environment and maintaining a good academic performance. I can say that I am not confident when it comes to my academic performance but I’m trying as much as I can to maintain good grades and not drop my subjects. When it comes to fitting in, sometimes I felt like I didn’t belong or I feel very odd and not in place. Most probably because of the new environment and people I’m hanging out with which I’m still not used to it.</p>
-        <p>By: Dwayne Fajardo <br>
-            Navigating my college journey has presented several challenges. Balancing the demands of academics, extracurricular activities, and personal responsibilities has proven to be quite draining. Additionally, adapting to a new environment and diverse teaching methods has been a significant adjustment. Managing time effectively while staying motivated amidst high expectations remains a continuous struggle. Despite these hardships, I am determined to persevere and grow through these experiences.</p>
-        <p>By: Daniel Isaac Melo <br>
-            My challenges in college is having an event in school while we have pendings tasks in other subjects I mean it’s really easy to handle it but with additional task in that event is hard for me and challenging because knowing you have still have pendings in school tasks you have a event in school that you should attend and kinda challenging for me because in one event there is a additional task during that day and I need some time management to finish the given tasks in school. My number 2 challenges is getting up early knowing that don’t have enough sleep because of cramming in assignments during that night I know that I should do the task earlier when I have a time but there are too many pending task to do so I have to cram in the night that’s all my challenges in college journey.</p>
-
+    <div class="dropdown">
+      <button class="dropbtn">Popular Posts 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="study-habits.html">Study Habits</a>
+        <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
+        <a href="first-college-experience.html">First Week College Experience</a>
+        <a href="college-challenges.html">Challenges in College Journey</a>
+        <a href="web-creators.html">Getting to Know Behind the Web Creators</a>
     </div>
-    <p class="toggle-button" onclick="toggleContent()">Read More</p>
+    </div> 
+    <a href="about-us.html">About Us</a>
+    <a href="contact-us.html">Contact Us</a> 
+    <button class="hamburger" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </button>    
+  </div>
+
+  <h1>Challeges in this College Journey</h1>
+  <p>By: Toribio, Nolasco, Fajardo, and Melo</p>
+
+  <section class="image-gallery">
+      <h2>Visual Archive</h2>
+      <div class="gallery">
+          <img src="Images/ChallengesNCollege/CherryCnC.jpg" alt="Cherry Challenge in Collge">
+          <img src="Images/ChallengesNCollege/RavenCnC.jpg" alt="Raven Challenge in College">
+          <img src="Images/ChallengesNCollege/DwayneCnC.jpg" alt="Dwayne Challege in College">
+          <img src="Images/ChallengesNCollege/MeloCnC.jpg" alt="Melo Challenge in College">
+      </div>
+  </section>
+  <br>
+  <p>Here are the challenges we encounter in this college journey:</p>
+
+  <div class="extra-content">
+      <p><h4>By: Cherry Joy Toribio <br></h4>
+        College is definitely a completely new environment for me. Taking a programming course felt like being lost in a maze with no map. My dream was to pursue a Bachelor of Education degree, but due to personal and private issues, I ended up in this program, which is technically aligned with my senior high school strand. However, programming is entirely new to me, as we only covered Contact Center Services (CCS) in senior high school. Everything was overwhelming—from codes to programs, it felt like standing at the edge of an uncharted ocean, unsure of which way to wade in. I had a hard time adjusting, and I think that has been the most challenging part of college for me so far.</p>
+      <p><h4>By: Raven Nolasco <br></h4>
+        I can definitely say that College is very different from High school, the environment, the people, almost everything is different. The challenge I am facing right now as a college student is fitting in the environment and maintaining a good academic performance. I can say that I am not confident when it comes to my academic performance but I’m trying as much as I can to maintain good grades and not drop my subjects. When it comes to fitting in, sometimes I felt like I didn’t belong or I feel very odd and not in place. Most probably because of the new environment and people I’m hanging out with which I’m still not used to it.</p>
+      <p><h4>By: Dwayne Fajardo <br></h4>
+        Navigating my college journey has presented several challenges. Balancing the demands of academics, extracurricular activities, and personal responsibilities has proven to be quite draining. Additionally, adapting to a new environment and diverse teaching methods has been a significant adjustment. Managing time effectively while staying motivated amidst high expectations remains a continuous struggle. Despite these hardships, I am determined to persevere and grow through these experiences.</p>
+      <p><h4>By: Daniel Isaac Melo <br></h4>
+        My challenges in college is having an event in school while we have pendings tasks in other subjects I mean it’s really easy to handle it but with additional task in that event is hard for me and challenging because knowing you have still have pendings in school tasks you have a event in school that you should attend and kinda challenging for me because in one event there is a additional task during that day and I need some time management to finish the given tasks in school. My number 2 challenges is getting up early knowing that don’t have enough sleep because of cramming in assignments during that night I know that I should do the task earlier when I have a time but there are too many pending task to do so I have to cram in the night that’s all my challenges in college journey.</p>
+  </div>
+  <p class="toggle-button" onclick="toggleContent()">Read More</p>
 
 </body>
 </html>

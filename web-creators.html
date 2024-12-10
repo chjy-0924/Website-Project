@@ -1,107 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Getting to Know the Web Creators</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Go-To Unwinding Activities for College Students</title>
     <style>
+        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Arial', cursive, sans-serif;
+            background-color: #f9f4e6;
+            margin: 0;
+            padding: 0;
+            color: #444;
         }
 
-        h1, h2 {
+        header {
             text-align: center;
+            padding: 20px;
+            background-color: #FFDE4D;
+            color: #333;
+            font-size: 2rem;
+            border-bottom: 5px solid #04AA6D;
         }
 
-        p {
-            text-align: justify;
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
+        .entry {
+            border-bottom: 2px dashed #04AA6D;
+            padding: 15px 0;
         }
 
+        .entry:last-child {
+            border-bottom: none;
+        }
+
+        .entry h2 {
+            color: #04AA6D;
+            margin-bottom: 10px;
+        }
+
+        .entry img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            float: left;
+            border: 3px solid #04AA6D;
+        }
+
+        .entry ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .entry ul li {
+            padding: 5px 0;
+        }
+
+        .entry p {
+            clear: both;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: #777;
+        }
         /* Mobile responsiveness */
         @media screen and (max-width: 600px) {
-            .topnav a {
-                display: none;
-            }
+        .topnav a {
+            display: none;
+        }
             
-            .topnav.responsive {
-                position: relative;
-            }
+        .topnav.responsive {
+            position: relative;
+        }
 
-            .topnav.responsive a {
-                display: block;
-                text-align: left;
-                padding: 8px;
-                text-decoration: none;
-            }
+        .topnav.responsive a {
+            display: block;
+            text-align: left;
+            padding: 8px;
+            text-decoration: none;
+        }
 
-            .topnav.responsive .icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .footer {
+            text-align: center;
+            background: #ddd;
+            padding: 10px;
         }
     </style>
+
+    <script>
+    // Function to toggle navbar for small screens
+    function myFunction() {
+        const x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+
+    // Dynamic Greeting Based on Time of Day
+    window.onload = function() {
+        const greetingElement = document.createElement('h2');
+        const currentHour = new Date().getHours();
+        let greeting = "Welcome!";
+        if (currentHour < 12) {
+            greeting = "Good Morning!";
+        } else if (currentHour < 18) {
+            greeting = "Good Afternoon!";
+        } else {
+            greeting = "Good Evening!";
+        }
+        greetingElement.textContent = greeting;
+        greetingElement.style.textAlign = "center";
+        document.body.insertBefore(greetingElement, document.body.firstChild);
+    };
+
+    // Toggle Additional Content
+    function toggleContent() {
+        const extraContent = document.querySelector('.extra-content');
+        const toggleButton = document.querySelector('.toggle-button');
+        if (extraContent.style.display === "none") {
+            extraContent.style.display = "block";
+            toggleButton.textContent = "Read Less";
+        } else {
+            extraContent.style.display = "none";
+            toggleButton.textContent = "Read More";
+        }
+    }
+    </script>
+
+
 </head>
 <body>
 
-    <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn">Main Articles 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
-              <a href="sinag-tams.html">Sinag Tams Activities</a>
-              <a href="pre-christmas.html">Pre-Christmas Activities</a>
-              <a href="group-experience.html">Group Experience</a>
-              <a href="life-lessons.html">Life Lessons in This College Journey</a> 
+<!-- Navbar -->
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Main Articles 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
+        <a href="sinag-tams.html">Sinag Tams Activities</a>
+        <a href="pre-christmas.html">Pre-Christmas Activities</a>
+        <a href="group-experience.html">Group Experience</a>
+        <a href="life-lessons.html">Life Lessons in this College Journey</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Popular Posts 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="study-habits.html">Study Habits</a>
+        <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
+        <a href="first-college-experience.html">First Week College Experience</a>
+        <a href="college-challenges.html">Challenges in College Journey</a>
+        <a href="web-creators.html">Getting to Know Behind the Web Creators</a>
+    </div>
+    </div> 
+    <a href="about-us.html">About Us</a>
+    <a href="contact-us.html">Contact Us</a> 
+    <button class="hamburger" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </button>    
+  </div>
+
+    <header>
+        <strong>Getting To Know Behind Webpage Creators</strong>
+    </header>
+
+    <div class="container">
+        <!-- Entry 1 -->
+        <div class="entry">
+            <img src="Images/GettingToKnow/ContactUs_Cherry.jpg" alt="Cherry Joy Toribio">
+            <h2>Cherry Joy A. Toribio</h2>
+            <br>
+            <p><strong>Message:</strong> Hello, everyone! I’m Cherry Joy A. Toribio, a college freshman pursuing a Bachelor of Science in Information Technology. People often call me "Joy," but at school, most prefer to call me "Cherry." I would describe myself as introverted and quiet, but once you get to know me, I’ll be the bubbliest and loudest friend you can have. I’m just an ordinary girl who loves watching movies, studying, and drinking coffee—a lot. People often recognize me for my distinct qualities, like being "the student who always tops the class" or "the girl who is artistic and loves writing calligraphy." Most of my life revolves around academics and my spiritual routine. I’m also very independent—I generally don’t like working with partners unless they’re my friends or I feel comfortable around them. I prefer to do things on my own. Honestly, when we started creating this website, I actually wanted to do everything myself. However, I didn’t want to leave my team behind, so I made sure to work collaboratively. Well, that’s a lot about me. Thank you for taking the time to read this! Make sure to check out more of our articles. ^^</p>
+            <ul><strong>Hobbies:</strong> 
+                <li>Writing Calligraphy</li>
+                <li>Journaling</li>
+                <li>Painting</li>
+                <li>Singing</strong>
+            </ul>
+            <ul><strong>Current Favorites:</strong>
+                <li><strong>Food:</strong> Mango Graham Cake</li>
+                <li><strong>Movie:</strong> What is True Love? - A JW Original Movie</li>
+                <li><strong>Color:</strong> Pink and Yellow</li>
+                <li><strong>Song:</strong> Blue - Yung Kai</li>
+                <audio controls src= "MP3s/yung kai - blue (Official Audio).mp3"
+            </ul>
             </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropbtn">Popular Posts 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="study-habits.html">Study Habits</a>
-              <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
-              <a href="first-college-experience.html">First Week College Experience</a>
-              <a href="college-challenges.html">Challenges in College Journey</a>
-              <a href="web-creators.html">Getting to Know Behind the Web Creators</a> 
+
+        <!-- Entry 2 -->
+        <div class="entry">
+            <img src="Images/GettingToKnow/ContactUs_Raven.JPG" alt="Raven Nolasco">
+            <h2>Raven S. Nolasco</h2>
+            <br>
+            <p><strong>Message:</strong> Raven S. Nolasco is a 1st year college student and is currently studying Bachelor of Science in Information Technology Course in FEU Roosevelt Marikina. Born on 5th of February, 2005 and she’s currently 19 years old. She went from the same school in her senior years from 11th to 12th grade and graduated with Honors. </p>
+            <ul><strong>Hobbies:</strong> 
+                <li>Playing different types of games</li>
+                <li>Dancing</li>
+                <li>Listening to music</li>
+                <li>Watching movies/series</strong>
+            </ul>
+            <ul><strong>Current Favorites:</strong>
+                <li><strong>Food:</strong> Conti’s Baked Prawns</li>
+                <li><strong>Movie:</strong> The Devil Wears Prada</li>
+                <li><strong>Color:</strong> Red, Black, Nude colors</li>
+                <li><strong>Song:</strong> Sin City - SAAY, Tiyon</li>
+                <audio controls src= "MP3s/[OFFICIAL AUDIO] SAAY (쎄이) - Sin City (duet with. Tiyon).mp3"
+            </ul>
             </div>
-          </div>  
-        <a href="#contact">Contact Us</a>
-        <a href="#about">About Us</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
+        
+        <!-- Entry 3 -->
+        <div class="entry">
+            <img src="Images/GettingToKnow/ContactUs_Dwayne.jpeg" alt="Dwayne Fajardo">
+            <h2>Dwayne T. Fajardo</h2>
+            <br>
+            <p><strong>Message:</strong> Greetings, everyone! I'm Dwayne T. Fajardo, a college freshman pursuing a Bachelor of Science in Information Technology. I don't have a second name, thus people most often call me "Dwayne." I would describe myself as ambiverted, as each of my friends see me differently, some think of me as loud, vise versa. I'm just a guy that loves to play video games. People often recognize me for my distinct qualities, like being "the student who plays well in various video games" or "the guy who is competitive and loves learning a variety of video games." Most of my life revolves around playing video games. I'm also generally good at doing mental math.</p>
+            <ul><strong>Hobbies:</strong> 
+                <li>Playing different types of games</li>
+                <li>Playing Billiards</li>
+            </ul>
+            <ul><strong>Current Favorites:</strong>
+                <li><strong>Food:</strong>  Pizza</li>
+                <li><strong>Movie:</strong> The Night Comes For Us</li>
+                <li><strong>Color:</strong> Pink</li>
+                <li><strong>Song:</strong> Until I Found You - Stephen Sanchez and Em Beihold</li>
+                <audio controls src= "MP3s/Stephen Sanchez, Em Beihold - Until I Found You (Lyrics).mp3"
+            </ul>
+            </div>
+
+        <!-- Entry 4 -->
+        <div class="entry">
+            <img src="Images/GettingToKnow/ContactUs_Melo.JPG" alt="Daniel Isaac Melo">
+            <h2>Daniel Isaac M. Melo</h2>
+            <br>
+            <p><strong>Message:</strong> Daniel Isaac M. Melo is 18 years old and lives in Fortune, Marikina City. He is always ready to cooperate and help the group, although he can sometimes be a bit lazy. However, he remains attentive and trustworthy in completing tasks assigned to him. He has knowledge of programming because, during his high school days, his school taught him the basics of programming.</p>
+            <ul><strong>Hobbies:</strong> 
+                <li>Playing different types of games</li>
+                <li>Playing guitar</li>
+                <li>Listen to Music</li>
+            </ul>
+            <ul><strong>Current Favorites:</strong>
+                <li><strong>Food:</strong>  Munggo</li>
+                <li><strong>Movie:</strong> Scream Franchise</li>
+                <li><strong>Color:</strong> Blue</li>
+                <li><strong>Song:</strong> Hanggang Kailan - Orange and Lemons</li>
+                <audio controls src= "MP3s/Orange & Lemons - Hanggang Kailan ( Official Music Video ).mp3"
+            </ul>
+            </div>
     </div>
 
-    <h1>Getting to Know the Web Creators</h1>
-    <p>By Cherry Joy Toribio</p>
-    <br>
-    <p>This is the full content of the blog post. You can add more paragraphs, images, and other HTML elements as needed.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <!-- Footer -->
+  <div class="footer">
+    <h2>Our FEU Roosevelt Freshmen Journey</h2>
+    <p>©2024 Web Page Creation</p>
+  </div>
 
-    <!-- Add JavaScript for the menu toggle -->
-    <script>
-        // Mobile menu toggle function
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive"; // Add 'responsive' class when clicked
-            } else {
-                x.className = "topnav"; // Revert back to default class
-            }
-        }
-    </script>
 </body>
 </html>

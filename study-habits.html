@@ -23,93 +23,144 @@
             margin-left: 20px;
         }
 
+        .extra-content {
+            display: none;
+        }
+
+        .toggle-button {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
         /* Style for the navigation bar */
-        .topnav {
+        .navbar {
             overflow: hidden;
             background-color: #333;
         }
 
-        .topnav a {
+        .navbar a {
             float: left;
-            display: block;
-            color: #f2f2f2;
+            font-size: 16px;
+            color: white;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
         }
 
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        /* Style for the active "Home" link */
-        .topnav a.active {
-            background-color: #4CAF50;  /* Green color */
-            color: white;  /* White text */
-        }
-
         .dropdown {
-            float: left;
-            overflow: hidden;
+             float: left;
+             overflow: hidden;
         }
 
-        .dropdown .dropbtn {
-            font-size: 16px;
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-        }
+     .dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            z-index: 1;
-        }
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: green;
+}
 
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
-        .icon {
-            display: none;
-        }
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-        @media screen and (max-width: 600px) {
-            .topnav a:not(:first-child) {display: none;}
-            .topnav a.icon {
-                float: right;
-                display: block;
-            }
-            .topnav.responsive {position: relative;}
-            .topnav.responsive .icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-            .topnav.responsive a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-        }
+/* Hamburger Button */
+.hamburger {
+  display: none; /* Hidden by default */
+  float: right;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.hamburger:hover {
+  background-color: green; /* Matches hover color of navbar */
+}
+
+/* Show hamburger icon on smaller screens */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block; /* Visible on small screens */
+  }
+}
+
+/* Hide navbar items on small screens */
+@media screen and (max-width: 768px) {
+  .navbar a, .navbar .dropdown {
+    display: none; /* Hide all links and dropdowns */
+  }
+  .navbar.active a, .navbar.active .dropdown {
+    display: block; /* Show links and dropdowns when active */
+    float: none;
+    text-align: left;
+    padding: 10px;
+  }
+}
+
+/* Image Gallery Section */
+.image-gallery {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .image-gallery h2 {
+        margin-bottom: 20px;
+        color: #04AA6D;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        justify-content: center;
+    }
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
     </style>
     <script>
         // Toggle the navigation menu for smaller screens
@@ -121,99 +172,101 @@
                 nav.className = "topnav";
             }
         }
+
+        window.onload = function() {
+            const greetingElement = document.createElement('h2');
+            const currentHour = new Date().getHours();
+            let greeting = "Welcome!";
+            if (currentHour < 12) {
+                greeting = "Good Morning!";
+            } else if (currentHour < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+            greetingElement.textContent = greeting;
+            greetingElement.style.textAlign = "center";
+            document.body.insertBefore(greetingElement, document.body.firstChild);
+        };
+
+        // Toggle Additional Content
+        function toggleContent() {
+            const extraContent = document.querySelector('.extra-content');
+            const toggleButton = document.querySelector('.toggle-button');
+            if (extraContent.style.display === "none") {
+                extraContent.style.display = "block";
+                toggleButton.textContent = "Read Less";
+            } else {
+                extraContent.style.display = "none";
+                toggleButton.textContent = "Read More";
+            }
+        }
+
     </script>
-    <title>Mastering the Art of Effective Study Habits: A College Student's Guide</title>
+    <title>Our Study Habits</title>
 </head>
 <body>
 
-    <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn">Main Articles 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
-              <a href="sinag-tams.html">Sinag Tams Activities</a>
-              <a href="pre-christmas.html">Pre-Christmas Activities</a>
-              <a href="group-experience.html">Group Experience</a>
-              <a href="life-lessons.html">Life Lessons in This College Journey</a> 
-            </div>
-        </div> 
-        <div class="dropdown">
-            <button class="dropbtn">Popular Posts 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="study-habits.html">Study Habits</a>
-              <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
-              <a href="first-college-experience.html">First Week College Experience</a>
-              <a href="college-challenges.html">Challenges in College Journey</a>
-              <a href="web-creators.html">Getting to Know Behind the Web Creators</a> 
-            </div>
-        </div> 
-        <a href="#contact">Contact Us</a>
-        <a href="#about">About Us</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
+     <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Main Articles 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
+        <a href="sinag-tams.html">Sinag Tams Activities</a>
+        <a href="pre-christmas.html">Pre-Christmas Activities</a>
+        <a href="group-experience.html">Group Experience</a>
+        <a href="life-lessons.html">Life Lessons in this College Journey</a>
+      </div>
     </div>
+    <div class="dropdown">
+      <button class="dropbtn">Popular Posts 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="study-habits.html">Study Habits</a>
+        <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
+        <a href="first-college-experience.html">First Week College Experience</a>
+        <a href="college-challenges.html">Challenges in College Journey</a>
+        <a href="web-creators.html">Getting to Know Behind the Web Creators</a>
+    </div>
+    </div> 
+    <a href="about-us.html">About Us</a>
+    <a href="contact-us.html">Contact Us</a> 
+    <button class="hamburger" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </button>    
+  </div>
 
-    <h1>Mastering the Art of Effective Study Habits: A College Student's Guide</h1>
+  <h1>Our Study Habits</h1>
+  <p>By: Toribio, Nolasco, Fajardo, and Melo</p>
 
-    <p>College life is a whirlwind of lectures, assignments, and social events. Amidst this chaos, effective study habits can be a lifesaver. Here are some tips to help you maximize your study time and achieve academic success:</p>
+  <section class="image-gallery">
+      <h2>Visual Archive</h2>
+      <div class="gallery">
+          <img src="Images/StudyHabits/CherrySH.jpg" alt="Cherry Study Habits">
+          <img src="Images/StudyHabits/RavenSH.jpg" alt="Raven Study Habits">
+          <img src="Images/StudyHabits/DwayneSH.jpg" alt="Dwayne Study Habits">
+          <img src="Images/StudyHabits/MeloSH.jpg" alt="Melo Study Habits">
+      </div>
+  </section>
+  <br>
+  <p>Our Study Habits:</p>
 
-    <h2>1. Create a Dedicated Study Space:</h2>
-    <ul>
-        <li>Find Your Zen Zone: Identify a quiet, well-lit space where you can focus without distractions.</li>
-        <li>Organize Your Workspace: Keep your study area clutter-free and well-organized.</li>
-        <li>Minimize Distractions: Turn off your phone, silence notifications, and close unnecessary tabs on your computer.</li>
-    </ul>
+  <div class="extra-content">
+      <p><h4>By: Cherry Joy Toribio <br></h4>
+          I use various study habits to enhance my academic performance and improve my retention and understanding. However, one study habit or technique I commonly use is the Pomodoro Technique. The Pomodoro Technique helps balance work and break time and is a time management method designed to help you focus on specific tasks. It involves working in focused intervals of 25 minutes, called "Pomodoros," followed by a 5-minute break. After completing four Pomodoros, I take a longer break of 15 to 30 minutes. This technique helps me improve focus, avoid burnout, and boost productivity. Aside from that technique, I also enjoy studying with friends, such as testing one another and using active recall. With active recall, I try to retrieve information from memory without looking at my notes, then review my notes to identify and fill in the gaps. Lastly, I never forget my daily dose of coffee, which helps boost my alertness, elevate my mood, and increase my energy.</p>
+      <p><h4>By: Raven Nolasco <br></h4>
+          My study habits are structured and effective, helping me stay focused and productive. I prefer to study with instrumental background music to ease my mind and create a calming atmosphere. I set a schedule for my tasks to ensure that I stay organized and on track. While reviewing, I take detailed notes and use flashcards to reinforce my understanding of the material. I also prioritize my well-being by taking 15-30 minute breaks to refresh my mind and eating snacks occasionally to maintain my energy levels. Additionally, I keep my to-do tasks organized, which helps me manage my time efficiently and reduce stress. These habits contribute to a balanced and efficient study routine.</p>
+      <p><h4>By: Dwayne Fajardo <br></h4>
+          I keep my study habits organized and structured so my time is used most effectively. I allocate specific time slots for studying each day, focusing on maintaining consistency. I prioritize understanding concepts thoroughly rather than just memorizing information. Taking regular breaks helps me stay focused and retain information better. Additionally, I make use of tools like notes, flashcards, and practice tests to reinforce my learning effectively.</p>
+      <p><h4>By: Daniel Isaac Melo <br></h4>
+        I keep my study habits are always organized but sometimes it’s not organized because of helping my parents doing household chores and some task that will give to me but I try my best to have time management to do my study habits like watching some youtube videos to know the basics of the lesson and that I can keep up with the lesson in the other day but I always try my best to organize my study habits when I have a time my one of my study habits is taking notes and reviewing them later on to keep up with the lessons that will given to us.</p>
+  </div>
+  <p class="toggle-button" onclick="toggleContent()">Read More</p>
 
-    <h2>2. Develop a Consistent Study Schedule:</h2>
-    <ul>
-        <li>Time Management is Key: Create a realistic study schedule that allocates specific time slots for each subject.</li>
-        <li>Prioritize Tasks: Identify the most important tasks and tackle them first.</li>
-        <li>Break It Down: Divide larger tasks into smaller, manageable chunks.</li>
-        <li>Reward Yourself: Celebrate your achievements with short breaks and rewards.</li>
-    </ul>
-
-    <h2>3. Active Learning Techniques:</h2>
-    <ul>
-        <li>Active Recall: Test your knowledge by quizzing yourself or explaining concepts to someone else.</li>
-        <li>Spaced Repetition: Review material at increasing intervals to reinforce learning.</li>
-        <li>Mind Mapping: Visualize complex ideas and relationships.</li>
-        <li>Pomodoro Technique: Study in focused 25-minute intervals, followed by short breaks.</li>
-    </ul>
-
-    <h2>4. Effective Note-Taking:</h2>
-    <ul>
-        <li>Listen Actively: Pay attention to the lecture and take concise notes.</li>
-        <li>Use a Consistent Format: Develop a note-taking system that works for you, whether it's the Cornell method, outline method, or mind mapping.</li>
-        <li>Review and Revise: Regularly review your notes to reinforce learning.</li>
-    </ul>
-
-    <h2>5. Healthy Lifestyle Habits:</h2>
-    <ul>
-        <li>Prioritize Sleep: Aim for 7-8 hours of quality sleep each night.</li>
-        <li>Fuel Your Body: Eat a balanced diet to keep your energy levels up.</li>
-        <li>Stay Hydrated: Drink plenty of water throughout the day.</li>
-        <li>Regular Exercise: Engage in physical activity to reduce stress and improve focus.</li>
-    </ul>
-
-    <h2>6. Seek Help When Needed:</h2>
-    <ul>
-        <li>Don't Hesitate to Ask Questions: Seek clarification from your professors or teaching assistants.</li>
-        <li>Utilize Campus Resources: Take advantage of tutoring services, writing centers, and academic counseling.</li>
-        <li>Study Groups: Collaborate with classmates to discuss concepts and solve problems together.</li>
-    </ul>
-
-    <p>Remember, consistency is key. By implementing these study habits into your routine, you can improve your academic performance and reduce stress.</p>
-
-    <p><strong>Additional Tip: Stay Positive and Believe in Yourself!</strong></p>
-
-    <p>A positive mindset can significantly impact your study habits and overall academic success. Believe in your abilities, stay motivated, and don't be afraid to seek help when needed.</p>
-
-    <p>By combining effective study techniques with a healthy lifestyle, you can unlock your full potential and achieve your academic goals.</p>
 </body>
 </html>

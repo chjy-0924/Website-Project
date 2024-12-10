@@ -3,6 +3,12 @@ function toggleTheme() {
   document.body.classList.toggle("dark-theme");
 }
 
+function toggleMenu() {
+  const navbar = document.getElementById('navbar');
+  navbar.classList.toggle('active');
+}
+
+
 // Scroll to top
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -27,3 +33,4 @@ window.onscroll = function () {
     btn.style.display = "none";
   }
 };
+

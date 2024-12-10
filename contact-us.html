@@ -1,116 +1,223 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script>
-  // Function to toggle navigation menu for small screens
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
 
-  // Form validation function
-  function validateForm(event) {
-    const name = document.forms["newsletterForm"]["name"].value.trim();
-    const email = document.forms["newsletterForm"]["mail"].value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        /* Navbar styles */
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
 
-    if (name === "") {
-      alert("Name must be filled out.");
-      event.preventDefault();
-      return false;
-    }
-    if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address.");
-      event.preventDefault();
-      return false;
-    }
-    alert("Thank you for subscribing!");
-    return true;
-  }
+        .topnav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
 
-  // Dynamic welcome message based on the time of day
-  window.onload = function() {
-    const header = document.querySelector(".header h2");
-    const currentHour = new Date().getHours();
-    if (currentHour < 12) {
-      header.textContent = "Good Morning! Welcome to Our FEU Roosevelt Freshmen Journey";
-    } else if (currentHour < 18) {
-      header.textContent = "Good Afternoon! Welcome to Our FEU Roosevelt Freshmen Journey";
-    } else {
-      header.textContent = "Good Evening! Welcome to Our FEU Roosevelt Freshmen Journey";
-    }
-  };
-</script>
+        .topnav a:hover {
+            background-color: #575757;
+        }
+
+        .topnav a.active {
+            background-color: #04aa6d;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        /* Header styles */
+        .header {
+            text-align: center;
+            background-color: #04aa6d;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Main content */
+        .main-content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content h1 {
+            text-align: center;
+            color: #04aa6d;
+        }
+
+        .main-content h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        .main-content p {
+            line-height: 1.6;
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #04aa6d;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #037d56;
+        }
+
+        /* Footer styles */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #FFDE4D;
+            color: rgb(0, 0, 0);
+            margin-top: 20px;
+        }
+
+        .footer h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child), .topnav .icon {
+                display: block;
+                text-align: center;
+            }
+
+            .main-content {
+                padding: 15px;
+            }
+        }
+    </style>
+    <script>
+        function myFunction() {
+            const x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        window.onload = function () {
+            const aboutSection = document.querySelector(".about-section p");
+            const currentHour = new Date().getHours();
+            let greeting = "Hello!";
+            if (currentHour < 12) {
+                greeting = "Good Morning!";
+            } else if (currentHour < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+            aboutSection.textContent = `${greeting} Welcome to our About Us page. We’re excited to share our story with you.`;
+        };
+
+        function validateForm(event) {
+            const name = document.forms["newsletterForm"]["name"].value.trim();
+            const email = document.forms["newsletterForm"]["mail"].value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name === "") {
+                alert("Name must be filled out.");
+                event.preventDefault();
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                event.preventDefault();
+                return false;
+            }
+            alert("Thank you for subscribing!");
+            return true;
+        }
+    </script>
 </head>
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <div class="dropdown">
-    <button class="dropbtn">Main Articles 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="feu-roosevelt.html">FEU Roosevelt Halloween Cos-Play and Lobby Decoration</a>
-      <a href="sinag-tams.html">Sinag Tams Activities</a>
-      <a href="pre-christmas.html">Pre-Christmas Activities</a>
-      <a href="group-experience.html">Group Experience</a>
-      <a href="life-lessons.html">Life Lessons in This College Journey</a> 
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Popular Posts 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="study-habits.html">Study Habits</a>
-      <a href="unwinding-activities.html">Go-To Unwinding Activities</a>
-      <a href="first-college-experience.html">First Week College Experience</a>
-      <a href="college-challenges.html">Challenges in College Journey</a>
-      <a href="web-creators.html">Getting to Know Behind the Web Creators</a> 
-    </div>
-  </div>  
-  <a href="#contact">Contact Us</a>
-  <a href="#about">About Us</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+    <a href="index.html" class="active">Home</a>
+    <a href="contact-us.html">Contact Us</a>
+    <a href="about-us.html">About Us</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
 </div>
 
 <div class="header">
   <h2>Our FEU Roosevelt Freshmen Journey</h2>
 </div>
 
-<h1>Contact Us</h1>
-<form name="newsletterForm" onsubmit="return validateForm(event)" action="/action_page.php">
-  <div class="container">
-    <h2>Subscribe to our Newsletter</h2>
-    <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
-  </div>
+<div class="main-content">
+    <h1>Contact Us</h1>
+    <form name="newsletterForm" onsubmit="return validateForm(event)" action="/action_page.php">
+        <h2>Subscribe now and let’s grow together!</h2>
+        <p>Don’t miss out on exclusive updates, inspiring stories, and valuable tips tailored just for you. Subscribe to our newsletter and be the first to know about new content and exciting events. </p>
 
-  <div class="container" style="background-color:white">
-    <input type="text" placeholder="Name" name="name" required>
-    <input type="text" placeholder="Email address" name="mail" required>
-    <label>
-      <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
-    </label>
-  </div>
+        <input type="text" placeholder="Name" name="name" required>
+        <input type="text" placeholder="Email address" name="mail" required>
+        <label>
+            <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
+        </label>
 
-  <div class="container">
-    <input type="submit" value="Subscribe">
-  </div>
-</form>
+        <input type="submit" value="Subscribe">
+    </form>
+</div>
 
 <div class="footer">
-  <h2>Footer</h2>
-  <p> @2024 Web Page Creation</p>
+  <h2>Our FEU Roosevelt Freshmen Journey</h2>
+  <p>&copy;2024 Web Page Creation</p>
 </div>
 
 </body>
